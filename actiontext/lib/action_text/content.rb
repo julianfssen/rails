@@ -104,9 +104,15 @@ module ActionText
     end
 
     def ==(other)
+      Rails.logger.info "DEBUGGING: New method!"
+      puts "DEBUGGING: New method!"
       if self.class == other.class
+        Rails.logger.info "DEBUGGING: New method with same class"
+        puts "DEBUGGING: New method with same class"
         to_html == other.to_html
       elsif other.is_a?(self.class)
+        Rails.logger.info "DEBUGGING: New method with kind of class"
+        puts "DEBUGGING: New method with kind of class"
         to_s == other.to_s
       end
     end
